@@ -19,6 +19,11 @@ Bye-Cookies is a Chrome extension designed to help you remove annoying cookie po
 We welcome contributions! Please fork the repository and submit pull requests.
 
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
 ---
 
 
