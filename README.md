@@ -5,7 +5,7 @@ Bye-Cookies is a Chrome extension designed to help you remove annoying cookie po
 ## Features
 
 - **Select and Remove**: Easily select any div element on a webpage and remove it.
-- **Target Cookie Pop-ups**: Specifically designed to remove cookie consent pop-ups.
+- **Target Cookie Pop-ups**: Specifically designed to remove cookie consent pop-ups on user selection.
 
 ## Usage
 
