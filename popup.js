@@ -1,11 +1,5 @@
 document.getElementById("removeBtn").addEventListener("click", () => {
-  let elementId = false;
-
-  if (document.getElementById("elementId").value === null) {
-    elementId = false;
-  } else {
-    elementId = document.getElementById("elementId").value;
-  }
+  const elementId = document.getElementById("elementId").value;
   if (elementId) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0];
