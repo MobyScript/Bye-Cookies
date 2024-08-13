@@ -7,3 +7,19 @@ chrome.storage.sync.get("elements", (data) => {
     }
   });
 });
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "hideElement") {
+    const element = document.getElementById(request.id);
+    if (element) {
+      element.style.display = "none";
+      sendResponse({ status: "Element hidden" });
+    }
+  } else if (request.action === "undoElement") {
+    const element = document.getElementById(request.id);
+    if (element) {
+      element.style.display = "block";
+      sendResponse({ status: "Element restored" });
+    }
+  }
+});

@@ -36,3 +36,38 @@ document.getElementById("removeBtn").addEventListener("click", () => {
     });
   });
 });
+
+// Function to load and display removed elements
+function populateHistory() {
+  chrome.storage.sync.get("elements", (data) => {
+    const elements = data.elements || [];
+    const itemsList = document.getElementById("items-list");
+    itemsList.innerHTML = "";
+
+    if (elements.length === 0) {
+      itemsList.innerHTML = "<p>No items have been removed.</p>";
+    } else {
+      const ul = document.createElement("ul");
+
+      elements.forEach((id, index) => {
+        const li = document.createElement("li");
+        li.textContent = `Element ID: ${id}`;
+
+        const undoButton = document.createElement("button");
+        undoButton.textContent = "Undo";
+        undoButton.onclick = () => undoRemoval(index, id);
+
+        li.appendChild(undoButton);
+        ul.appendChild(li);
+      });
+
+      itemsList.appendChild(ul);
+    }
+  });
+}
+
+document.getElementById("go-to-history").addEventListener("click", () => {
+  chrome.tabs.create({
+    url: chrome.runtime.getURL("history.html"),
+  });
+});
