@@ -4,26 +4,61 @@
     <title>Bye Cookies</title>
     <style>
       body {
-        width: 200px;
-        padding: 10px;
-      }
-      #status {
         margin-top: 10px;
-        color: green;
+        width: 200px;
+        font-family: sans-serif;
       }
     </style>
   </head>
-  <body style="background-color: #000000; color: #797676; height: 250px">
-    <script></script>
-    <div>
-      <h1>Remove Element</h1>
-      <p>This extension helps with removing annoying elements on the screen</p>
+  <body>
+    <div
+      style="
+        position: fixed;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgb(182, 3, 3);
+        z-index: 1000;
+      "
+    >
+      <h2 style="color: white; padding: 10px; margin: 0; text-align: center">
+        Remove Cookies
+      </h2>
+    </div>
+
+    <div
+      style="
+        margin-top: 20px;
+        padding: 60px 10px 10px 10px;
+        text-align: center;
+        background-color: white;
+      "
+    >
+      <p>
+        This extension is intended to remove cookie popups. However, you can
+        remove other elements on the screen.
+      </p>
 
       <div style="margin: auto; width: 100%; text-align: center">
-        <button id="removeBtn">Select Element</button>
+        <button
+          id="removeBtn"
+          style="
+            border-radius: 12px;
+            padding: 10px;
+            color: #3c3939;
+            border-color: #ffff;
+            cursor: pointer;
+            font-weight: bold;
+          "
+        >
+          Select Element
+        </button>
       </div>
       <div id="status"></div>
     </div>
-    <script src="popup.js"></script>
   </body>
+
+  <script src="popup.js"></script>
 </html>
